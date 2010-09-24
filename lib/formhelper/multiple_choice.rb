@@ -1,4 +1,4 @@
-module FactoryForm
+module FormHelper
   class MultipleChoice < Field
     attr_accessor :values # Option values
     # attr_accessor :type # select_box, check_box, radio_button(:default)

@@ -4,9 +4,9 @@ class FormTest < Test::Unit::TestCase
 
   def test_should_create_form
     # Create short answer and long answer objects
-    sa = FactoryForm::ShortAnswer.new(:id => "email_1",:label => "Personal email address" )
-    la = FactoryForm::LongAnswer.new(:id => "comment_1",:label => "Provide your comments below")
-    form = FactoryForm::Form.new() 
+    sa = FormHelper::ShortAnswer.new(:id => "email_1",:label => "Personal email address" )
+    la = FormHelper::LongAnswer.new(:id => "comment_1",:label => "Provide your comments below")
+    form = FormHelper::Form.new() 
 
     # Add short answer and long answer objects
     form.add(sa)
@@ -15,13 +15,13 @@ class FormTest < Test::Unit::TestCase
     assert_equal 2,form.fields.length
 
     # Create form object with title
-    form2 = FactoryForm::Form.new({:title => "Data collection"})
+    form2 = FormHelper::Form.new({:title => "Data collection"})
     assert_equal "Data collection", form2.title
 
   end
 
   def test_should_list_all_the_fields
-    sa = FactoryForm::ShortAnswer.new(:id => "url_1",:label => "Personal web address",
+    sa = FormHelper::ShortAnswer.new(:id => "url_1",:label => "Personal web address",
     :options => {
       :hint => "It should be his/her personal web address",
       :validation_format => "url",
@@ -30,7 +30,7 @@ class FormTest < Test::Unit::TestCase
     }
     )
 
-    la = FactoryForm::LongAnswer.new(:id => "comment_1",:label => "Provide your comments below", 
+    la = FormHelper::LongAnswer.new(:id => "comment_1",:label => "Provide your comments below", 
     :options => {
       :hint => "Up to a maximum of 250 characters",
       :required => false,
@@ -40,7 +40,7 @@ class FormTest < Test::Unit::TestCase
       :cols => 5
     }
     )
-    form = FactoryForm::Form.new()
+    form = FormHelper::Form.new()
     form.add(sa)
     form.add(la)
 
@@ -60,13 +60,13 @@ class FormTest < Test::Unit::TestCase
 
     # Get email field
     field_to_delete = form.get(:id => "email_1")
-    assert_instance_of FactoryForm::ShortAnswer,field_to_delete  
+    assert_instance_of FormHelper::ShortAnswer,field_to_delete  
 
     # Delete email field
     form.remove(field_to_delete)
 
     assert_equal 2, form.fields.length
-    assert_instance_of FactoryForm::LongAnswer, form.fields.first
+    assert_instance_of FormHelper::LongAnswer, form.fields.first
 
   end
 
@@ -101,18 +101,18 @@ class FormTest < Test::Unit::TestCase
     assert_kind_of(String, changed_yml) 
 
     # Create short answer and long answer objects
-    sa = FactoryForm::ShortAnswer.new(:id => "email_1",:label => "Personal email address" )
-    la = FactoryForm::LongAnswer.new(:id => "comment_1",:label => "Provide your comments below")
-    td = FactoryForm::TextData.new(:id => "name_1", :label => "Person's name")    
-    img = FactoryForm::ImageData.new(:id => "photo_1", :label => "Photo of person")
-    form = FactoryForm::Form.new(:title => "Survey form") 
+    sa = FormHelper::ShortAnswer.new(:id => "email_1",:label => "Personal email address" )
+    la = FormHelper::LongAnswer.new(:id => "comment_1",:label => "Provide your comments below")
+    td = FormHelper::TextData.new(:id => "name_1", :label => "Person's name")    
+    img = FormHelper::ImageData.new(:id => "photo_1", :label => "Photo of person")
+    form = FormHelper::Form.new(:title => "Survey form") 
 
     # Add short answer and long answer objects
     form.add(sa)
     form.add(la)
     form.add(td)
     form.add(img)
-    assert_instance_of FactoryForm::ImageData, form.fields.last
+    assert_instance_of FormHelper::ImageData, form.fields.last
     
   
   end
@@ -125,15 +125,15 @@ class FormTest < Test::Unit::TestCase
 
     # Convert to hash for making sure that yaml string is also changed
     before_hash =  YAML::load(changed_yml)
-    assert_instance_of FactoryForm::ShortAnswer, before_hash.fields.first
+    assert_instance_of FormHelper::ShortAnswer, before_hash.fields.first
 
     # Move email field down
     form.move_down(field1) 
     after_hash = YAML::load(form.to_yml)
-    assert_instance_of FactoryForm::LongAnswer, after_hash.fields.first
+    assert_instance_of FormHelper::LongAnswer, after_hash.fields.first
 
-    form.add(FactoryForm::TextData.new(:id => "my-name", :label => "my name"))
-    assert_instance_of FactoryForm::TextData, after_hash.fields.last
+    form.add(FormHelper::TextData.new(:id => "my-name", :label => "my name"))
+    assert_instance_of FormHelper::TextData, after_hash.fields.last
 
   end
 
@@ -154,10 +154,10 @@ class FormTest < Test::Unit::TestCase
 
   private 
   def create_form
-    sa = FactoryForm::ShortAnswer.new(:id => "email_1", :label => "Personal email address" )
-    la = FactoryForm::LongAnswer.new(:id => "comment_1", :label => "Provide your comments below")
-    td = FactoryForm::TextData.new(:id => "name_1", :label => "Person's name")  
-    form = FactoryForm::Form.new()
+    sa = FormHelper::ShortAnswer.new(:id => "email_1", :label => "Personal email address" )
+    la = FormHelper::LongAnswer.new(:id => "comment_1", :label => "Provide your comments below")
+    td = FormHelper::TextData.new(:id => "name_1", :label => "Person's name")  
+    form = FormHelper::Form.new()
     form.add(sa)
     form.add(la)
     form.add(td)

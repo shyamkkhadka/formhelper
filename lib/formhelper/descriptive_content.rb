@@ -1,4 +1,4 @@
-module FactoryForm
+module FormHelper
   class DescriptiveContent 
     attr_reader :id
     attr_accessor :label, :value

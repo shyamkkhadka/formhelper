@@ -17,8 +17,8 @@ require File.join(File.dirname(__FILE__),'formhelper/rating')
 require File.join(File.dirname(__FILE__),'formhelper/descriptive_content')
 
 
-module FactoryForm
-  # Raised when FactoryForm::TextData.new doesn't include a required parameter
+module FormHelper
+  # Raised when FormHelper::TextData.new doesn't include a required parameter
   class ParameterExpectedException < RuntimeError
 
   end

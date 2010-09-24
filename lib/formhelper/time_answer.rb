@@ -1,4 +1,4 @@
-module FactoryForm
+module FormHelper
   class TimeAnswer< ShortAnswer 
     def initialize(options={})
       options[:field_type] = "short_answer"

@@ -1,4 +1,4 @@
-module FactoryForm
+module FormHelper
   class ImageData < Field
     attr_accessor :alt, :url
 

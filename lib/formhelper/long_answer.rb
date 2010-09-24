@@ -1,4 +1,4 @@
-module FactoryForm
+module FormHelper
   class LongAnswer < Field
     attr_accessor :min_chars
     def initialize(options={})

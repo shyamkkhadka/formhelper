@@ -1,4 +1,4 @@
-module FactoryForm
+module FormHelper
   class Currency < Field 
     # TODO: Need to think about it
     

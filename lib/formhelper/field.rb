@@ -1,4 +1,4 @@
-module FactoryForm
+module FormHelper
   # Field is simply a hash of different attributes 
   class Field
     attr_reader :id

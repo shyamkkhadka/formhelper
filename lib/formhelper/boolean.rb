@@ -1,4 +1,4 @@
-module FactoryForm
+module FormHelper
   class Boolean < Field
     attr_accessor :values # True/false values
 

@@ -1,4 +1,4 @@
-module FactoryForm
+module FormHelper
   # Rating has different scales
   class Rating < Field
     attr_accessor :scale, :from_label, :to_label

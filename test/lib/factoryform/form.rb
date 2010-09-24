@@ -4,7 +4,7 @@ require 'json/pure'
 require File.join(File.dirname(__FILE__),'utils')
 require 'rexml/document'
 
-module FactoryForm
+module FormHelper
   # Form is simply an ordered array of fields. Each Field is simply a hash of field options.
   class Form 
     attr_accessor :title, :fields

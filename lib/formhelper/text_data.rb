@@ -1,4 +1,4 @@
-module FactoryForm
+module FormHelper
   class TextData < Field
     attr_accessor :value
 

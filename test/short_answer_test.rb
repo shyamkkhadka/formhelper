@@ -2,7 +2,7 @@ require 'test_helper'
 
 class ShortAnswerTest < Test::Unit::TestCase
   def test_should_create_short_answer_field_with_minimum_params_passed
-    sa1 = FactoryForm::ShortAnswer.new(:id => "email_1", :label => "Personal email address")
+    sa1 = FormHelper::ShortAnswer.new(:id => "email_1", :label => "Personal email address")
 
     # By default, no validation for different formats unless explicitly specified
     assert_equal "general",sa1.validation_format
@@ -38,12 +38,12 @@ class ShortAnswerTest < Test::Unit::TestCase
     assert_equal "It should be his/her personal email address, not his official address.", sa1.hint
 
     # Ensures object of this class
-    assert_instance_of FactoryForm::ShortAnswer, sa1
+    assert_instance_of FormHelper::ShortAnswer, sa1
 
   end
 
   def test_should_create_short_answer_field_with_all_other_optional_params 
-    sa = FactoryForm::ShortAnswer.new(:id => "url_1", :label => "Personal web address",
+    sa = FormHelper::ShortAnswer.new(:id => "url_1", :label => "Personal web address",
     :options => {
       :hint => "It should be his/her personal web address",
       :validation_format => "url",
@@ -62,21 +62,21 @@ class ShortAnswerTest < Test::Unit::TestCase
 
   def test_should_not_create_short_answer_field_if_required_params_are_missing
     # Raise expected argument exception as ID,label are required
-    assert_raise(FactoryForm::ParameterExpectedException){ FactoryForm::ShortAnswer.new() }
+    assert_raise(FormHelper::ParameterExpectedException){ FormHelper::ShortAnswer.new() }
   end
 
   def test_should_not_raise_exception_for_valid_params_passed
-    assert_nothing_raised(Exception){ FactoryForm::ShortAnswer.new(:id => "phone_number", :label => "Phone Number") }
+    assert_nothing_raised(Exception){ FormHelper::ShortAnswer.new(:id => "phone_number", :label => "Phone Number") }
   end
 
   def test_should_raise_exception_if_duplicate_ID_exists
-    sa1 = FactoryForm::ShortAnswer.new(:id => "email_1", :label => "Official email address")
-    sa2 = FactoryForm::ShortAnswer.new(:id => "email_1", :label => "Personal email address")
-    form = FactoryForm::Form.new
+    sa1 = FormHelper::ShortAnswer.new(:id => "email_1", :label => "Official email address")
+    sa2 = FormHelper::ShortAnswer.new(:id => "email_1", :label => "Personal email address")
+    form = FormHelper::Form.new
     form.add(sa1)
     
     # Raise duplicate ID exception
-    assert_raise(FactoryForm::DuplicateIDException){ form.add(sa2) }
+    assert_raise(FormHelper::DuplicateIDException){ form.add(sa2) }
   end
 
 

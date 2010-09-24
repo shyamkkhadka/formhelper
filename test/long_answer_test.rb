@@ -2,7 +2,7 @@ require 'test_helper'
 
 class LongAnswerTest < Test::Unit::TestCase
   def test_should_create_long_answer_field
-    la = FactoryForm::LongAnswer.new(:id => "comments", :label => "Provide your comments below")
+    la = FormHelper::LongAnswer.new(:id => "comments", :label => "Provide your comments below")
 
     # Long answer text should not have any validation format
     assert_equal "general", la.validation_format
@@ -32,7 +32,7 @@ class LongAnswerTest < Test::Unit::TestCase
     assert_equal 500, la.min_chars
     
     # Pass min_chars 
-    la2 = FactoryForm::LongAnswer.new(:id => "comments", :label => "Provide your comments below", :options => {:min_chars => 700 })
+    la2 = FormHelper::LongAnswer.new(:id => "comments", :label => "Provide your comments below", :options => {:min_chars => 700 })
     assert_equal 700, la2.min_chars
     
     # Field type
@@ -42,11 +42,11 @@ class LongAnswerTest < Test::Unit::TestCase
 
    def test_should_not_create_long_answer_field_if_ID_label_are_missing
     # Raise expected argument exception as ID,label are required
-    assert_raise(FactoryForm::ParameterExpectedException){ FactoryForm::LongAnswer.new() }
+    assert_raise(FormHelper::ParameterExpectedException){ FormHelper::LongAnswer.new() }
   end
 
   def test_should_set_minimum_number_of_characters
-    la = FactoryForm::LongAnswer.new(:id => "comments", :label => "Provide your comments below")
+    la = FormHelper::LongAnswer.new(:id => "comments", :label => "Provide your comments below")
     la.min_chars = 500
     assert_equal 500,la.min_chars
   end

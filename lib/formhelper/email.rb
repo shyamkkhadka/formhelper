@@ -1,4 +1,4 @@
-module FactoryForm
+module FormHelper
   class Email < ShortAnswer 
     def initialize(options={})
       options[:field_type] = "short_answer"      
