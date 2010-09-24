@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Module: FactoryForm</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href=".././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Module</strong></td>
+          <td class="class-name-in-header">FactoryForm</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../files/lib/formhelper/boolean_rb.html">
+                lib/formhelper/boolean.rb
+                </a>
+        <br />
+                <a href="../files/lib/formhelper/currency_rb.html">
+                lib/formhelper/currency.rb
+                </a>
+        <br />
+                <a href="../files/lib/formhelper/date_answer_rb.html">
+                lib/formhelper/date_answer.rb
+                </a>
+        <br />
+                <a href="../files/lib/formhelper/descriptive_content_rb.html">
+                lib/formhelper/descriptive_content.rb
+                </a>
+        <br />
+                <a href="../files/lib/formhelper/email_rb.html">
+                lib/formhelper/email.rb
+                </a>
+        <br />
+                <a href="../files/lib/formhelper/field_rb.html">
+                lib/formhelper/field.rb
+                </a>
+        <br />
+                <a href="../files/lib/formhelper/form_rb.html">
+                lib/formhelper/form.rb
+                </a>
+        <br />
+                <a href="../files/lib/formhelper/image_data_rb.html">
+                lib/formhelper/image_data.rb
+                </a>
+        <br />
+                <a href="../files/lib/formhelper/long_answer_rb.html">
+                lib/formhelper/long_answer.rb
+                </a>
+        <br />
+                <a href="../files/lib/formhelper/multiple_choice_rb.html">
+                lib/formhelper/multiple_choice.rb
+                </a>
+        <br />
+                <a href="../files/lib/formhelper/number_rb.html">
+                lib/formhelper/number.rb
+                </a>
+        <br />
+                <a href="../files/lib/formhelper/rating_rb.html">
+                lib/formhelper/rating.rb
+                </a>
+        <br />
+                <a href="../files/lib/formhelper/short_answer_rb.html">
+                lib/formhelper/short_answer.rb
+                </a>
+        <br />
+                <a href="../files/lib/formhelper/text_data_rb.html">
+                lib/formhelper/text_data.rb
+                </a>
+        <br />
+                <a href="../files/lib/formhelper/time_answer_rb.html">
+                lib/formhelper/time_answer.rb
+                </a>
+        <br />
+                <a href="../files/lib/formhelper/url_rb.html">
+                lib/formhelper/url.rb
+                </a>
+        <br />
+                <a href="../files/lib/formhelper_rb.html">
+                lib/formhelper.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+
+
+   </div>
+
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+    <div id="class-list">
+      <h3 class="section-bar">Classes and Modules</h3>
+
+      Class <a href="FactoryForm/Boolean.html" class="link">FactoryForm::Boolean</a><br />
+Class <a href="FactoryForm/Currency.html" class="link">FactoryForm::Currency</a><br />
+Class <a href="FactoryForm/DateAnswer.html" class="link">FactoryForm::DateAnswer</a><br />
+Class <a href="FactoryForm/DescriptiveContent.html" class="link">FactoryForm::DescriptiveContent</a><br />
+Class <a href="FactoryForm/DuplicateIDException.html" class="link">FactoryForm::DuplicateIDException</a><br />
+Class <a href="FactoryForm/Email.html" class="link">FactoryForm::Email</a><br />
+Class <a href="FactoryForm/Field.html" class="link">FactoryForm::Field</a><br />
+Class <a href="FactoryForm/Form.html" class="link">FactoryForm::Form</a><br />
+Class <a href="FactoryForm/ImageData.html" class="link">FactoryForm::ImageData</a><br />
+Class <a href="FactoryForm/LongAnswer.html" class="link">FactoryForm::LongAnswer</a><br />
+Class <a href="FactoryForm/MultipleChoice.html" class="link">FactoryForm::MultipleChoice</a><br />
+Class <a href="FactoryForm/Number.html" class="link">FactoryForm::Number</a><br />
+Class <a href="FactoryForm/ParameterExpectedException.html" class="link">FactoryForm::ParameterExpectedException</a><br />
+Class <a href="FactoryForm/Rating.html" class="link">FactoryForm::Rating</a><br />
+Class <a href="FactoryForm/ShortAnswer.html" class="link">FactoryForm::ShortAnswer</a><br />
+Class <a href="FactoryForm/TextData.html" class="link">FactoryForm::TextData</a><br />
+Class <a href="FactoryForm/TimeAnswer.html" class="link">FactoryForm::TimeAnswer</a><br />
+Class <a href="FactoryForm/Url.html" class="link">FactoryForm::Url</a><br />
+
+    </div>
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

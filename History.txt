@@ -1,0 +1,20 @@
+=== 0.0.1 2010-08-23
+
+* 1 major enhancement:
+  * Initial release
+
+=== 0.0.2 2010-09-08
+
+* Other fields added:
+  * included boolean field, rating field
+  * field types like select_box, check_box, radio_button are included in MultipleChoice Class
+  
+
+* TODO: Coming up for next release:
+ * Include advanced field types (priority wise)
+	* FileUploadField
+	* GoogleMapField
+	* RecordVideoField
+	* RecordAudioField
+	* TakePhotoField
+NOTE:: Look for other options as well (Ref: formtastic.com, wufoo.com)
