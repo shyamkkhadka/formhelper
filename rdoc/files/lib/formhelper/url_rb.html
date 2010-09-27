@@ -5,10 +5,10 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-  <title>File: README.rdoc</title>
+  <title>File: url.rb</title>
   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
   <meta http-equiv="Content-Script-Type" content="text/javascript" />
-  <link rel="stylesheet" href=".././rdoc-style.css" type="text/css" media="screen" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
   <script type="text/javascript">
   // <![CDATA[
 
@@ -47,16 +47,16 @@
 
 
   <div id="fileHeader">
-    <h1>README.rdoc</h1>
+    <h1>url.rb</h1>
     <table class="header-table">
     <tr class="top-aligned-row">
       <td><strong>Path:</strong></td>
-      <td>README.rdoc
+      <td>lib/formhelper/url.rb
       </td>
     </tr>
     <tr class="top-aligned-row">
       <td><strong>Last Update:</strong></td>
-      <td>Mon Sep 27 09:30:05 +0545 2010</td>
+      <td>Fri Sep 24 16:12:59 +0545 2010</td>
     </tr>
     </table>
   </div>
@@ -68,63 +68,6 @@
 
   <div id="contextContent">
 
-    <div id="description">
-      <h1>formhelper</h1>
-<p>
-This is a library to create different form field elements, allows form
-object to parse into different formats (YAML, JSON, XML)
-</p>
-<h1>INSTALLATION</h1>
-<p>
-sudo gem install formhelper
-</p>
-<h1>BASIC USAGE</h1>
-<p>
-require &#8216;rubygems&#8216;
-</p>
-<p>
-require &#8216;formhelper&#8216;
-</p>
-<p>
-# Create a form object
-</p>
-<p>
-form = FormHelper::Form.new()
-</p>
-<p>
-# Create short answer and long answer objects
-</p>
-<p>
-sa = FormHelper::ShortAnswer.new(:id =&gt; &quot;email_1&quot;,:label =&gt;
-&quot;Personal email address&quot; )
-</p>
-<p>
-la = FormHelper::LongAnswer.new(:id =&gt; &quot;comment_1&quot;,:label
-=&gt; &quot;Provide your comments below&quot;)
-</p>
-<p>
-# Add short answer and long answer objects
-</p>
-<p>
-form.add(sa)
-</p>
-<p>
-form.add(la)
-</p>
-<p>
-# Returns YAML format of form
-</p>
-<p>
-form.to_yml
-</p>
-<p>
-# Returns XML format of form
-</p>
-<p>
-form.to_yml
-</p>
-
-    </div>
 
 
    </div>

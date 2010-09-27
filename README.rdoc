@@ -6,22 +6,31 @@ sudo gem install formhelper
 
 = BASIC USAGE
 require 'rubygems'
+
 require 'formhelper'
 
+
 # Create a form object
+
 form = FormHelper::Form.new() 
 
+
 # Create short answer and long answer objects
+
 sa = FormHelper::ShortAnswer.new(:id => "email_1",:label => "Personal email address" )
+
 la = FormHelper::LongAnswer.new(:id => "comment_1",:label => "Provide your comments below")
 
 # Add short answer and long answer objects
+
 form.add(sa)
+
 form.add(la)
 
 # Returns YAML format of form
+
 form.to_yml
-=> "--- !ruby/object:FormHelper::Form \nfields: \n- !ruby/object:FormHelper::ShortAnswer \n  field_type: short_answer\n  hint: \" \"\n  id: email_1\n  label: Personal email address\n  required: true\n  unique: false\n  validation_format: general\n- !ruby/object:FormHelper::LongAnswer \n  field_type: long_answer\n  hint: \" \"\n  id: comment_1\n  label: Provide your comments below\n  min_chars: 500\n  required: true\n  unique: false\n  validation_format: general\ntitle: \"\"\n" 
 
 # Returns XML format of form
+
 form.to_yml
